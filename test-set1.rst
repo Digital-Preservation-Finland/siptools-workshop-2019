@@ -15,7 +15,7 @@ View files and strucure of package::
 
 	ls
 	ls contents/
-	ls contents/Access and use rights files/
+	ls contents/Access\ and\ use\ rights\ files/
 
 Make a workspace directory::
 
@@ -30,7 +30,8 @@ Run the following scripts in order.
 
 	import-object --workspace ./workspace contents/
 
-2) Create digital provenance data for the package::
+2) Create digital provenance data for the package (feel free to change the
+event_detail and event_outcome_detail texts)::
 
 	premis-event creation '2019-04-16T13:30:55' --workspace ./workspace --event_detail 'Creating a SIP from a structured data package' --event_outcome success --event_outcome_detail 'SIP created successfully using the pre-ingest tool' --agent_name 'Pre-Ingest tool' --agent_type software
 
@@ -42,7 +43,8 @@ Run the following scripts in order.
 
 	compile-structmap --workspace ./workspace 
 
-5) Compile the METS document and copy content files to the workspace::
+5) Compile the METS document and copy content files to the workspace (feel free
+to change the name of the organization)::
 
 	compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
 
