@@ -87,19 +87,21 @@ your intentions?
 Validation (optional)
 ---------------------
 
-These validatin steps can check the created metadata, the recorded checksum
-against the actual digital objects and validate the file formats themselves.
+These validation steps can check the created metadata, compare the recorded
+checksum against the actual digital objects and validate the file formats
+themselves against the created metadata.
 
-Validate the METS document against the schema like this::
+Validate the METS document against the schema::
 
     check-xml-schema-features workspace/mets.xml
 
-Perform additional validation of the METS document lik this (it outputs a file
-called output.txt)::
+Perform additional validation of the METS document like this (it outputs a file
+called output1.txt)::
 
     for i in $(ls /usr/share/dpres-xml-schemas/schematron/*.sch); do check-xml-schematron-features -s $i workspace/mets.xml ; done > output1.txt
 
-Grep the output1.txt file for successful or failed patterns::
+Grep the output1.txt file for successful or failed patterns (it isn't really
+human readable)::
 
     grep failure output1.txt
     grep patterns output1.txt
@@ -109,12 +111,11 @@ Validate the checksums recorded in the METS document against the actual files::
     check-sip-file-checksums workspace/
 
 Validate the file format and version reported in the METS document against the
-actual files usig diffrent validators installed with the file-scraper
-repository::
+actual files using different validators installed with the file-scraper tool::
 
     check-sip-digital-objects workspace/ test test > output2.txt
 
-Grep the output1.txt file for successful or failed events::
+Grep the output2.txt file for successful or failed events::
 
     grep failure output2.txt
     grep success output2.txt
