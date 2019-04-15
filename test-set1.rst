@@ -32,7 +32,7 @@ Run the following scripts in order.
 
 2) Create digital provenance data for the package::
 
-	premis-event creation '2016-10-13T12:30:55' --workspace ./workspace --event_detail Testing --event_outcome success --event_outcome_detail 'Outcome detail' --agent_name 'Demo Application' --agent_type software
+	premis-event creation '2019-04-16T13:30:55' --workspace ./workspace --event_detail 'Creating a SIP from a structured data package' --event_outcome success --event_outcome_detail 'SIP created successfully using the pre-ingest tool' --agent_name 'Pre-Ingest tool' --agent_type software
 
 3) Wrap the descriptive metadata into a METS XML wrapper file::
 
@@ -44,11 +44,11 @@ Run the following scripts in order.
 
 5) Compile the METS document and copy content files to the workspace::
 
-	compile-mets --workspace ./workspace ch 'CSC' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
+	compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
 
 6) Digitally sign the METS document::
 
-	sign-mets --workspace ./workspace /home/vagrant/scratch/dpres-siptools/tests/data/rsa-keys.crt
+	sign-mets --workspace ./workspace ../../dpres-siptools/tests/data/rsa-keys.crt
 
 7) Compress the workspace contents to a SIP archive in tar format::
 

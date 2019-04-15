@@ -17,6 +17,7 @@ Do the following commands in order::
     pip install -r requirements_github.txt
     pip install .
     pip install git+https://github.com/Digital-Preservation-Finland/dpres-ipt
+    cd ..
 
 Test cases commands
 -------------------
