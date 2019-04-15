@@ -35,7 +35,8 @@ file)::
     create-mix --workspace ./workspace images/image_1.tif
     create-mix --workspace ./workspace images/image_2.jpeg
 
-3) Create digital provenance data for the package::
+3) Create digital provenance data for the package (feel free to change the
+event_detail and event_outcome_detail texts, or any other data as you see fit)::
 
 	premis-event creation '2019-04-16T13:30:55' --workspace ./workspace --event_detail 'Creating a SIP for a image data package' --event_target images/ --event_outcome success --event_outcome_detail 'SIP created successfully using the pre-ingest tool' --agent_name 'Pre-Ingest tool' --agent_type software
 
