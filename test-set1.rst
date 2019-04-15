@@ -67,6 +67,12 @@ View the created METS document::
 
     gedit workspace/mets.xml
 
+Look at the METS root element attributes, the CONTRACTID, the OBJID. Take a
+look at the metsHdr containig information about the creating organization. The
+METS structural map is at the end of the document, look at the descibed
+structure and see how the directory strucure and names are translated to the
+structural map.
+
 Finally, clean up the workspace::
 
     rm -rf workspace/*
