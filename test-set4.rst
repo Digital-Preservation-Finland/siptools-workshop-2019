@@ -1,9 +1,9 @@
-Test Case 3 (EAD3 finding aid package)
+Test Case 4 (EAD3 finding aid package)
 ========================================
 
 This test case consists of a package containing an EAD3 finding aid file. The
-METS structural map can be creating using the structure contained within the
-EAd3 metadata. This package also contains a CSV file, that reqiures ADDML
+METS structural map can be created using the structure contained within the
+EAD3 metadata. This package also contains a CSV file that requires ADDML
 metadata to describe its structure.
 
 Prepararations
@@ -75,13 +75,13 @@ View the created METS document::
 	gedit workspace/mets.xml
 
 Look at the METS root element attributes, the CONTRACTID, the OBJID. Take a
-look at the metsHdr containig information about the creating organization. The
-METS structural map is at the end of the document, look at the descibed
+look at the metsHdr containing information about the creating organization. The
+METS structural map is at the end of the document, look at the described
 structure.
 
-Take closer look at the created structural map and how it representents the
+Take closer look at the created structural map and how it represents the
 hierarchical structure of the EAD3 metadata. Also look at the created ADDML
-metadata and how it describes the CSV files internal structure.
+metadata and how it describes the CSV file's internal structure.
 
 Finally, clean up the workspace::
 

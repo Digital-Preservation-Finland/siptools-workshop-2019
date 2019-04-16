@@ -1,7 +1,7 @@
 Test Case 5 (Define your own package)
 =====================================
 
-This test case consists of unstructured packagec containing a lot of files.
+This test case consists of an unstructured package containing a lot of files.
 This is an advanced exercise. The goal is to create a package and a structure
 that could resemble a real life case, for example using your own organization
 as an example. Create an complex folder structure and copy fitting files to
@@ -28,7 +28,7 @@ Create a folder structure using the mkdir command::
 
     mkdir <folder>/>subfolder>
 
-Move files to their correct folder::
+Move files to their intended folder::
 
     mv data-files/<file-to-be-moved> <destination folder>
 
@@ -39,7 +39,7 @@ Remove unnecessary files::
 Scripts
 -------
 
-Run the following scripts and repaet them if necessary:
+Run the following scripts and repeat them if necessary:
 
 import_description
     for adding a descriptive metadata section to a METS document.
@@ -103,7 +103,7 @@ called output1.txt)::
 Grep the output1.txt file for successful or failed patterns (it isn't really
 human readable)::
 
-    grep failure output1.txt
+    grep failed output1.txt
     grep patterns output1.txt
 
 Validate the checksums recorded in the METS document against the actual files::
