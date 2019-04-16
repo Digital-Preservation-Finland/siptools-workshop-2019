@@ -23,6 +23,4 @@ Test cases commands
 -------------------
 
 Open the test case .rst files for specific command instructions for each of the
-six test cases, for example::
-
-    gedit test-set1.rst
+six test cases with your browser by clicking the corresponding link.
