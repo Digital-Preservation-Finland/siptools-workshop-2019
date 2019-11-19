@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<metadata xmlns="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/">
+  <dc:title>Viitemalli pitkäaikaissäilytysarkistolle</dc:title>
+  <dc:description>Tämä kansallinen standardi pohjautuu standardiin ISO 14721:2012 Space data and information transfer systems — Open archival information system (OAIS) — Reference model. Standardin suomalaisesta versiosta on jätetty pois muutamia lukuja, jotka on eritelty liitteessä 1. Lisäksi tekstin kieliasua on yksinkertaistettu ja esimerkkejä on modernisoitu.
+SFS 5972 määrittelee standardin ja avoimen viitemallin pitkäaikaissäilytysarkistolle (Open Archival Information System eli OAIS; suomeksi PAS-arkisto). Pitkäaikaissäilytysarkisto voi olla osa suuremmasta organisaatiosta. PAS-arkistolla on tehtävän edellyttämä henkilökunta ja järjestelmät, ja se on ottanut vastuun tiedon pitkäaikaissäilytyksestä ja jakelusta kohdeyhteisölle. Viitemallissa määritellään erityisesti PAS-arkiston toimintaympäristö, toiminnalliset osat sekä arkiston käsittelemä tieto.</dc:description>
+  <dc:publisher>Suomen Standardisoimisliitto SFS ry</dc:publisher>
+  <dc:identifier>SFS 5972</dc:identifier>
+  <dc:format>application/pdf</dc:format>
+  <dc:date>2015-10-05</dc:date>
+  <dc:date>2015-10-23</dc:date>
+  <dc:subject>informatiikka</dc:subject>
+  <dc:subject>avaruusjärjestelmät</dc:subject>
+  <dc:type>Text</dc:type>
+  <dc:language>fin</dc:language>
+</metadata>
