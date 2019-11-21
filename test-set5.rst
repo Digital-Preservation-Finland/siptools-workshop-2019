@@ -1,124 +1,112 @@
-Test Case 5 (Define your own package)
-=====================================
+Test Case 1 (Ordered data with multiple descriptions and events)
+=============================
 
-This test case consists of an unstructured package containing a lot of files.
-This is an advanced exercise. The goal is to create a package and a structure
-that could resemble a real life case, for example using your own organization
-as an example. Create an complex folder structure and copy fitting files to
-their correct locations. Remove unnecessary files.
+This test case consists of data that requires that the digital objects are represented in a typical order. A part of the data is described using another descriptive metadata set. The provenance information consists of multiple events that only apply to certain files.
 
-Prepararations
+Preparations
 --------------
 
 Go to the test folder::
 
-    cd test_data/free_pkg/
+    cd test_data/ordered_pkg/
 
-View files and package::
+View files and strucure of package::
 
     ls
-    ls data-files/
-    ls metadata/
+    ls -laR data/
 
 Make a workspace directory::
 
     mkdir workspace
 
-Create a folder structure using the mkdir command::
-
-    mkdir <folder>/>subfolder>
-
-Move files to their intended folder::
-
-    mv data-files/<file-to-be-moved> <destination folder>
-
-Remove unnecessary files::
-
-    rm data-files/<remove-me>
-
 Scripts
 -------
 
-Run the following scripts and repeat them if necessary:
+Run the following scripts in order.
 
-import_description
-    for adding a descriptive metadata section to a METS document.
+1 - Create technical metadata for all content files with file order included::
 
-premis_event
-    for creating digital provenance metadata.
+    import-object --workspace ./workspace data/audio/audio_wav_1.wav --order 1
+    import-object --workspace ./workspace data/audio/audio_wav_2.wav --order 2
+    import-object --workspace ./workspace data/audio/audio_wav_3.wav --order 3
+    import-object --workspace ./workspace data/audio/audio_wav_4.wav --order 4
+    import-object --workspace ./workspace data/audio/audio_wav_5.wav --order 5
+    import-object --workspace ./workspace data/dataset/text_file_1.txt --order 1
+    import-object --workspace ./workspace data/dataset/text_file_2.txt --order 2
+    import-object --workspace ./workspace data/dataset/text_file_3.txt --order 3
+    import-object --workspace ./workspace data/dataset/text_file_4.txt --order 4
+    import-object --workspace ./workspace data/dataset/text_file_5.txt --order 5
 
-import_object
-    for adding technical metadata for digital objects to a METS document.
+2 - Create digital provenance data for the package creation::
 
-create_mix
-    for creating MIX metadata for image files.
+    premis-event creation '2019-11-21T13:30:55' --workspace ./workspace --event_detail 'Creating a SIP from a structured data package' --event_outcome success --event_outcome_detail 'SIP created successfully using the pre-ingest tool' --agent_name 'Pre-Ingest tool' --agent_type software
 
-create_addml
-    for creating ADDML metadata for csv files.
+3 - Create digital provenance data for the audio data normalization event::
 
-create_audiomd
-    for creating AudioMD metadata for audio streams.
+    premis-event migration '2019-09-20T13:30:55' --workspace ./workspace --event_detail 'Normalization of audio file formats from Apple ProRes to WAVE' --event_outcome success --event_outcome_detail 'WAVE files created' --agent_name 'ffmpeg' --agent_type software --event_target data/audio
 
-create_videomd
-    for creating VideoMD metadata for video streams.
+4 - Create digital provenance data for the dataset compilation and migration::
 
-compile_structmap
-    for creating the file section and structural map.
+    premis-event migration '2019-08-20T13:30:55' --workspace ./workspace --event_detail 'Migration of data from format X to format Y' --event_outcome success --event_outcome_detail 'Dataset migrated' --agent_name 'MS Office' --agent_type software --event_target data/dataset
 
-compile_mets
-    for compiling all previously created metadata files in a METS document.
+5 - Create digital provenance data for fixing one broken file before pre-ingest::
 
-sign_mets
-    for digitally signing the submission information package.
+    premis-event migration '2019-10-10T13:30:55' --workspace ./workspace --event_detail 'File contained some embarassing errors that were fixed during the pre-ingest quality check' --event_outcome success --event_outcome_detail 'Contents fixed and file is now valid' --agent_name 'vim' --agent_type software --event_target data/dataset/text_file_2.txt
 
-compress
-    for wrapping the created submission information package directory to a TAR file.
+6 - Create digital provenance data for checksum calculation::
+
+    premis-event 'message digest calculation' '2019-11-21T13:30:55' --workspace ./workspace --event_detail 'Calculating the MD5 checksum of the digital objects' --event_outcome success --event_outcome_detail 'MD5 checksum successfully calculated for all digital objects in the package' --agent_name 'Pre-Ingest tool' --agent_type software
+
+7 - Wrap the descriptive metadata into METS XML wrapper files, one for each content type::
+
+    import-description metadata/metadata_sound_dc.xml --workspace ./workspace --remove_root --dmdsec_target data/audio
+    import-description metadata/metadata_dataset_dc.xml --workspace ./workspace --remove_root --dmdsec_target data/dataset
+
+8 -  Compile the structural map and create the file section::
+
+    compile-structmap --workspace ./workspace 
+
+9 - Compile the METS document and copy content files to the workspace (feel free
+to change the name of the organization)::
+
+    compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
+
+10 - Digitally sign the METS document::
+
+    sign-mets --workspace ./workspace ../cert/rsa-keys.crt
+
+11 - Compress the workspace contents to a SIP archive in tar format::
+
+    compress --tar_filename test-set5.tar ./workspace
 
 Evaluation
 ----------
+
+List the contents of the workspace::
+
+    ls -laR workspace/
+
+| Do the files ``mets.xml`` and ``signature.sig`` exist in the workspace?
+| What does the ``contents/`` folder contain?
+
+List the contents of the tar archive::
+
+    tar -tvf workspace/test-set5.tar
+
+Does the created tar archive contain all the files in the workspace?
 
 View the created METS document::
 
     gedit workspace/mets.xml
 
-Take specific note at the created structural map. How well does it represent
-your intentions?
-
-Validation (optional)
----------------------
-
-These validation steps can check the created metadata, compare the recorded
-checksum against the actual digital objects and validate the file formats
-themselves against the created metadata.
-
-Validate the METS document against the schema::
-
-    check-xml-schema-features workspace/mets.xml
-
-Perform additional validation of the METS document like this (it outputs a file
-called output1.txt)::
-
-    for i in $(ls /usr/share/dpres-xml-schemas/schematron/*.sch); do check-xml-schematron-features -s $i workspace/mets.xml ; done > output1.txt
-
-Grep the output1.txt file for successful or failed patterns (it isn't really
-human readable)::
-
-    grep failed output1.txt
-    grep patterns output1.txt
-
-Validate the checksums recorded in the METS document against the actual files::
-
-    check-sip-file-checksums workspace/
-
-Validate the file format and version reported in the METS document against the
-actual files using different validators installed with the file-scraper tool::
-
-    check-sip-digital-objects workspace/ test test > output2.txt
-
-Grep the output2.txt file for successful or failed events::
-
-    grep failure output2.txt
-    grep success output2.txt
+|
+| The descriptive metadata is just below the mets header, in the descriptive metadata section (``dmdSec``). There should be two different dmdSec blocks, one describing the audio contents, and the other describing the textual contents.
+|
+| The METS structural map (``structMap``) is at the end of the document. Look at the described structure. There should be links to the created provenance data for both the whole package at the root of the structural map as well as for the different sections of the structural map. The descriptive metadata should also be linked separately to both sections.
+|
+| Take a look at the file section (``fileSec``) just above the structural map. Can you see the one fixed file with multiple ``ADMID`` attributes linking to both the technical as well as the provenance metadata.
+| 
+|
 
 Finally, clean up the workspace::
 
