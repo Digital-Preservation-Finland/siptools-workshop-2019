@@ -75,15 +75,20 @@ View the created METS document::
 
     gedit workspace/mets.xml
 
+|
 | Look at the METS root element attributes, the ``CONTRACTID`` and the ``OBJID``.
+|
 | Take a look at the mets header (``metsHdr``) containing information about the creating organization.
+|
 | The descriptive metadata from the file ``metadata_dc.xml`` is just below the mets header, in the descriptive metadata section (``dmdSec``).
-| Look at one of the technical metadata blocks described as ``premis:object`` metadata`. What does the technical metadata tell us about the file format of
-| the file in question?
-| The METS structural map (``structMap``) is at the end of the document, look at the described structure and see how the directory structure and names are
-| translated to the structural map.
+|
+| Look at one of the technical metadata blocks described as ``premis:object`` metadata`. What does the technical metadata tell us about the file format of the file in question?
+|
+| The METS structural map (``structMap``) is at the end of the document, look at the described structure and see how the directory structure and names are translated to the structural map.
+|
 | Take a look at the file section (``fileSec``) just above the structural map. Does the file section list all the files from the ``contents/`` folder?
 | 
-| Finally, clean up the workspace::
+
+Finally, clean up the workspace::
 
     rm -rf workspace/*

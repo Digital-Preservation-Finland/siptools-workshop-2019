@@ -73,14 +73,14 @@ View the created METS document::
 
 	gedit workspace/mets.xml
 
-| Look at the created technical metadata blocks within the mets administrative metadata section (``amdSec``). The ``premis:object`` and ``mix`` blocks
-| describe the images' technical properties. The number of ``premis`` and ``mix`` blocks respectively should equal the number of image files.
+|
+| Look at the created technical metadata blocks within the mets administrative metadata section (``amdSec``). The ``premis:object`` and ``mix`` blocks describe the images' technical properties. The number of ``premis`` and ``mix`` blocks respectively should equal the number of image files.
 |
 | What do the technical metadata blocks tell you about the files' technical properties?
 | 
-| Look at the file section (``fileSec``) just above the structural map. Do all image files have at least two ``ADMID`` links, one to a premis block and
-| another to a mix block?
+| Look at the file section (``fileSec``) just above the structural map. Do all image files have at least two ``ADMID`` links, one to a premis block and another to a mix block?
 | 
-| Finally, clean up the workspace::
+
+Finally, clean up the workspace::
 
 	rm -rf workspace/*
