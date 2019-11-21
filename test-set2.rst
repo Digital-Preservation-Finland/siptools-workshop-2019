@@ -79,6 +79,7 @@ View the created METS document::
 | What do the technical metadata blocks tell you about the files' technical properties?
 | 
 | Look at the file section (``fileSec``) just above the structural map. Do all image files have at least two ``ADMID`` links, one to a premis block and another to a mix block?
+|
 | 
 
 Finally, clean up the workspace::

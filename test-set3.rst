@@ -81,6 +81,7 @@ View the created METS document::
 
 	gedit workspace/mets.xml
 
+|
 | Look at the created technical metadata blocks within the mets administrative metadata section (``amdSec``). The ``premis:object``, ``audiomd`` and ``videomd`` blocks describe the audio and video files' technical properties.
 |
 | Do all audio files have an audiomd block linked to it? Do all video files have a videomd block linked to it?
@@ -89,6 +90,7 @@ View the created METS document::
 | 
 | Look at the file section (``fileSec``) just above the structural map. The video files should have separate stream elements within the file elements linking to the streams' technical metadata separate from the container files.
 | 
+|
 
 Finally, clean up the workspace::
 

@@ -88,6 +88,7 @@ View the created METS document::
 |
 | Take a look at the file section (``fileSec``) just above the structural map. Does the file section list all the files from the ``contents/`` folder?
 | 
+|
 
 Finally, clean up the workspace::
 
