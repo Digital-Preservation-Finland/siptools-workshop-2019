@@ -33,13 +33,15 @@ Run the following scripts in order.
 2 - Create AudioMD technical metadata for audio streams (run once for each
 file containing audio stream data, that is for both audio and video files)::
 
-    create-audiomd data/soundfile.wav --workspace ./workspace
-    create-audiomd data/videofile.mp4 --workspace ./workspace
+    create-audiomd data/audio_wav.wav --workspace ./workspace
+    create-audiomd data/audio_mp3.mp3 --workspace ./workspace
+    create-audiomd data/video_mp4.mp4 --workspace ./workspace
 
 3 - Create VideoMD technical metadata for video streams (run once for each file
 containing video stream data)::
 
-    create-videomd data/videofile.mp4 --workspace ./workspace
+    create-videomd data/video_mp4.mp4 --workspace ./workspace
+    create-videomd data/video_ffv1.mkv --workspace ./workspace
 
 4 - Create digital provenance data for the package (feel free to change the
 event_detail and event_outcome_detail texts, or any other text for that
@@ -49,7 +51,7 @@ matter)::
 
 5 - Wrap the descriptive metadata into a METS XML wrapper file::
 
-	import-description dc_description.xml --workspace ./workspace --remove_root
+	import-description metadata_dc.xml --workspace ./workspace --remove_root
 
 6 - Compile the structural map and create the file section::
 
@@ -62,30 +64,31 @@ to change the organization name)::
 
 8 - Digitally sign the METS document::
 
-	sign-mets --workspace ./workspace ../../dpres-siptools/tests/data/rsa-keys.crt
+	sign-mets --workspace ./workspace ../cert/rsa-keys.crt
 
 9 - Compress the workspace contents to a SIP archive in tar format::
 
-	compress --tar_filename sip.tar ./workspace
+	compress --tar_filename test-set3.tar ./workspace
 
 Evaluation
 ----------
 
 List the contents of the tar archive::
 
-	tar -tvf workspace/sip.tar
+	tar -tvf workspace/test-set3.tar
 
 View the created METS document::
 
 	gedit workspace/mets.xml
 
-Look at the METS root element attributes, the CONTRACTID, the OBJID. Take a look at
-the metsHdr containing information about the creating organization. The METS
-structural map is at the end of the document, look at the described structure.
-
-Take a closer look at the METS file section. Notice the links to both audioMD
-and videoMD blocks for the files. Also note that the video file contains two
-stream elements, one for the video stream, another for the audio stream.
+| Look at the created technical metadata blocks within the mets administrative metadata section (``amdSec``). The ``premis:object``, ``audiomd`` and ``videomd`` blocks describe the audio and video files' technical properties.
+|
+| Do all audio files have an audiomd block linked to it? Do all video files have a videomd block linked to it?
+|
+| What do the technical metadata blocks tell you about the files' technical properties?
+| 
+| Look at the file section (``fileSec``) just above the structural map. The video files should have separate stream elements within the file elements linking to the streams' technical metadata separate from the container files.
+| 
 
 Finally, clean up the workspace::
 
