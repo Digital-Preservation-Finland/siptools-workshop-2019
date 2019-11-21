@@ -32,8 +32,9 @@ Run the following scripts in order.
 2 - Create MIX technical metadata for image files (run once for each image
 file)::
 
-    create-mix --workspace ./workspace images/image_1.tif
-    create-mix --workspace ./workspace images/image_2.jpeg
+    create-mix --workspace ./workspace images/image_tiff_1.tif
+    create-mix --workspace ./workspace images/image_jpeg_2.jpeg
+    create-mix --workspace ./workspace images/image_jpeg_3.jpeg
 
 3 - Create digital provenance data for the package (feel free to change the
 event_detail and event_outcome_detail texts, or any other text as you see fit)::
@@ -42,7 +43,7 @@ event_detail and event_outcome_detail texts, or any other text as you see fit)::
 
 4 - Wrap the descriptive metadata into a METS XML wrapper file::
 
-	import-description dc_description.xml --workspace ./workspace --remove_root
+	import-description metadata_dc.xml --workspace ./workspace --remove_root
 
 5 - Compile the structural map and create the file section::
 
@@ -55,30 +56,31 @@ to change the organization name)::
 
 7 - Digitally sign the METS document::
 
-	sign-mets --workspace ./workspace ../../dpres-siptools/tests/data/rsa-keys.crt
+	sign-mets --workspace ./workspace ../cert/rsa-keys.crt
 
 8 - Compress the workspace contents to a SIP archive in tar format::
 
-	compress --tar_filename sip.tar ./workspace
+	compress --tar_filename test-set2.tar ./workspace
 
 Evaluation
 ----------
 
 List the contents of the tar archive::
 
-	tar -tvf workspace/sip.tar
+	tar -tvf workspace/test-set2.tar
 
 View the created METS document::
 
 	gedit workspace/mets.xml
 
-Look at the METS root element attributes, the CONTRACTID, the OBJID. Take a
-look at the metsHdr containing information about the creating organization. The
-METS structural map is at the end of the document, look at the described
-structure.
-
-Take a look at the created MIX metadata blocks for the image files.
-
-Finally, clean up the workspace::
+| Look at the created technical metadata blocks within the mets administrative metadata section (``amdSec``). The ``premis:object`` and ``mix`` blocks
+| describe the images' technical properties. The number of ``premis`` and ``mix`` blocks respectively should equal the number of image files.
+|
+| What do the technical metadata blocks tell you about the files' technical properties?
+| 
+| Look at the file section (``fileSec``) just above the structural map. Do all image files have at least two ``ADMID`` links, one to a premis block and
+| another to a mix block?
+| 
+| Finally, clean up the workspace::
 
 	rm -rf workspace/*
