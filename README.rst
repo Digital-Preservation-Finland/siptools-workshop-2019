@@ -1,8 +1,8 @@
-Pre-Ingest Tool Training in April 2019
-======================================
+Pre-Ingest Tool Training Workshop
+=================================
 
 This repository contains test data sets and command examples for the pre-ingest
-tool training day held in April 2019 at CSC.
+tool training exercises held at CSC.
 
 Installation of the pre-ingest tool
 -----------------------------------
@@ -19,8 +19,8 @@ Do the following commands in order::
     pip install git+https://github.com/Digital-Preservation-Finland/dpres-ipt
     cd ..
 
-Test cases commands
--------------------
+Exercise commands
+-----------------
 
-Open the test case .rst files for specific command instructions for each of the
-six test cases with your browser by clicking the corresponding link.
+Open the exercise .rst files for specific command instructions for each of the
+six exercise cases with your browser by clicking the corresponding link.

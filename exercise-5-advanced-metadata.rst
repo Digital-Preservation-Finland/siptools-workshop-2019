@@ -1,7 +1,9 @@
-Test Case 1 (Ordered data with multiple descriptions and events)
-=============================
+Exercise 5 (Ordered data with multiple descriptions and events)
+===============================================================
 
 This test case consists of data that requires that the digital objects are represented in a typical order. A part of the data is described using another descriptive metadata set. The provenance information consists of multiple events that only apply to certain files.
+The exercise focuses on creating ordered structural metadata for the files. Multiple events and descriptions, that target only portions of the data are created as part of this exercise.
+In the evaluation the user is asked to focus on the internal linkings within the METS XML document. The goal is to see how the descriptive metadata and the provenance history can target parts of the contents within a package.
 
 Preparations
 --------------

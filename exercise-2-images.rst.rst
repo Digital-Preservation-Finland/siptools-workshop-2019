@@ -1,8 +1,10 @@
-Test Case 2 (Image data contents)
-=================================
+Exercise 2 (Image data contents)
+================================
 
 This test case consists of image data contents. Image data files require MIX
 metadata blocks as additional technical metadata.
+The exercise focuses on creating mandatory technical metadata for image files.
+In the evaluation the user is asked to evaluate the images technical properties by exploring the created techincal metadata.
 
 Prepararations
 --------------

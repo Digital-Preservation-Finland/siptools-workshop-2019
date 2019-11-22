@@ -1,10 +1,9 @@
-Test Case 4 (EAD3 finding aid package)
-========================================
+Exercise 4 (EAD3 finding aid package)
+=====================================
 
-This test case consists of a package containing an EAD3 finding aid file. The
-METS structural map can be created using the structure contained within the
-EAD3 metadata. This package also contains a CSV file that requires ADDML
-metadata to describe its structure.
+This test case consists of a package containing an EAD3 finding aid file. The METS structural map can be created using the structure contained within the EAD3 metadata. This package also contains a CSV file that requires ADDML metadata to describe its structure.
+The exercise focuses on creating a structural map that translates the structure of the archival contents described in the EAD3 descriptive metadata, as well as creating the mandatory ADDML metadata for CSV files.
+In the evaluation the user is asked to evaluate the created structural metadata.
 
 Prepararations
 --------------

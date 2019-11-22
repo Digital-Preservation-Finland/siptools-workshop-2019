@@ -1,5 +1,5 @@
-Test Case 5 (Define your own package)
-=====================================
+Exercise 5 (Define your own package)
+====================================
 
 This test case consists of an unstructured package containing a lot of files.
 This is an advanced exercise. The goal is to create a package and a structure

@@ -1,8 +1,9 @@
-Test Case 1 (Structured data)
-=============================
+Exercise 1 (Structured textual data)
+====================================
 
-This test case consists of data structured in folders that are named with a
-human readable structural map in mind.
+The test package consists of text data structured in folders that are named with a human readable structural map in mind.
+This exercise focuses on running the basic commands to create a valid SIP package.
+The evaluation focuses on checking the output and comparing it to the original data as well as familiarizing the user with the metadata in the METS XML document.
 
 Preparations
 --------------

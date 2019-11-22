@@ -1,9 +1,11 @@
-Test Case 3 (Audio visual data contents)
-========================================
+Exercise 3 (Audio visual data contents)
+=======================================
 
 This test case consists of audio visual data contents. Audio data streams
 require AudioMD metadata blocks as additional technical metadata while video
 data streams require VideoMD metadata blocks.
+The exercise focuses on creating mandatory technical metadata for audio visual contents.
+In the evaluation the user is asked to evaluate the technical properties of the files by exploring the created techincal metadata.
 
 Prepararations
 --------------
