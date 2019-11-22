@@ -47,3 +47,5 @@ Write down, on a piece of paper or on the computer, ideas for how you would use 
 5 - How do you manage the SIPs? Where and how do you keep track of what has been ingested into the digital preservation system and when?
 
 6 - Do you have advanced needs (e.g. structural metadata, provenance information) that are not supported by the pre-ingest tool?
+
+7 - Do you feel that you have enough know-how to use the pre-ingest tool? What kind of information are you missing?
