@@ -42,7 +42,7 @@ Write down, on a piece of paper or on the computer, ideas for how you would use 
 
 3 - Do you have a system that administrates the contents and the metadata that could integrate the tool for automated SIP creation?
 
-4 - If you do not have a system, how would you run the scripts? What kind of automated scripts do you require? Can the example script in this repository be modified for your needs?
+4 - If you do not have a system, how would you run the scripts? What kind of automated scripts do you need? Can the example script in this repository be modified for your needs?
 
 5 - How do you manage the SIPs? Where and how do you keep track of what has been ingested into the digital preservation system and when?
 
