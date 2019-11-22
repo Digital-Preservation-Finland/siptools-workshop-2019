@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<metadata xmlns="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://purl.org/dc/elements/1.1/">
+  <dc:title>Sputnik-rakastettuni</dc:title>
+  <dc:description>Haruki Murakamin kaunokirjallinen teos Sputnik-rakastettuni kertoo nuoresta kirjailijasta.</dc:description>
+  <dc:publisher>Norsteds</dc:publisher>
+  <dc:identifier>pas-id-0001</dc:identifier>
+  <dc:format>kirja</dc:format>
+  <dc:date>1999</dc:date>
+  <dc:date>2008</dc:date>
+  <dc:creator>Haruki Murakami</dc:creator>
+  <dc:coverage>Japani</dc:coverage>
+  <dc:coverage>1990-luku</dc:coverage>
+  <dc:subject>kaunokirjallisuus</dc:subject>
+  <dc:subject>Japani</dc:subject>
+  <dc:subject>rakkauskertomukset</dc:subject>
+  <dc:subject>fiktio</dc:subject>
+  <dc:subject>rikoskirjallisuus</dc:subject>
+  <dc:type>Text</dc:type>
+  <dc:language>fin</dc:language>
+</metadata>

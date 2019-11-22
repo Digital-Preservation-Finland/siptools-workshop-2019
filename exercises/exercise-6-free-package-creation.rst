@@ -1,5 +1,5 @@
-Test Case 5 (Define your own package)
-=====================================
+Exercise 5 (Define your own package)
+====================================
 
 This test case consists of an unstructured package containing a lot of files.
 This is an advanced exercise. The goal is to create a package and a structure
@@ -7,14 +7,14 @@ that could resemble a real life case, for example using your own organization
 as an example. Create an complex folder structure and copy fitting files to
 their correct locations. Remove unnecessary files.
 
-Prepararations
---------------
+Preparations
+------------
 
 Go to the test folder::
 
     cd test_data/free_pkg/
 
-View files and package::
+View the files and the structure of the package::
 
     ls
     ls data-files/
@@ -72,7 +72,7 @@ sign_mets
     for digitally signing the submission information package.
 
 compress
-    for wrapping the created submission information package directory to a TAR file.
+    for wrapping the created submission information package directory into a TAR file.
 
 Evaluation
 ----------
