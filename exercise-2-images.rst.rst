@@ -6,14 +6,14 @@ metadata blocks as additional technical metadata.
 The exercise focuses on creating mandatory technical metadata for image files.
 In the evaluation the user is asked to evaluate the images technical properties by exploring the created techincal metadata.
 
-Prepararations
---------------
+Preparations
+------------
 
 Go to the test folder::
 
 	cd test_data/images_pkg/
 
-View files and strucure of package::
+View the files and the structure of the package::
 
 	ls
 	ls images/
@@ -51,7 +51,7 @@ event_detail and event_outcome_detail texts, or any other text as you see fit)::
 
 	compile-structmap --workspace ./workspace 
 
-6 - Compile the METS document and copy content files to the workspace (feel free
+6 - Compile the METS document and copy content files into the workspace (feel free
 to change the organization name)::
 
 	compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
@@ -60,7 +60,7 @@ to change the organization name)::
 
 	sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
-8 - Compress the workspace contents to a SIP archive in tar format::
+8 - Compress the workspace contents into a SIP archive in tar format::
 
 	compress --tar_filename test-set2.tar ./workspace
 

@@ -6,13 +6,13 @@ The exercise focuses on creating ordered structural metadata for the files. Mult
 In the evaluation the user is asked to focus on the internal linkings within the METS XML document. The goal is to see how the descriptive metadata and the provenance history can target parts of the contents within a package.
 
 Preparations
---------------
+------------
 
 Go to the test folder::
 
     cd test_data/ordered_pkg/
 
-View files and strucure of package::
+View the files and the structure of the package::
 
     ls
     ls -laR data/
@@ -68,7 +68,7 @@ Run the following scripts in order.
 
     compile-structmap --workspace ./workspace 
 
-9 - Compile the METS document and copy content files to the workspace (feel free
+9 - Compile the METS document and copy content files into the workspace (feel free
 to change the name of the organization)::
 
     compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
@@ -77,7 +77,7 @@ to change the name of the organization)::
 
     sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
-11 - Compress the workspace contents to a SIP archive in tar format::
+11 - Compress the workspace contents into a SIP archive in tar format::
 
     compress --tar_filename test-set5.tar ./workspace
 

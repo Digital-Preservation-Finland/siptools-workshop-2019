@@ -7,14 +7,14 @@ data streams require VideoMD metadata blocks.
 The exercise focuses on creating mandatory technical metadata for audio visual contents.
 In the evaluation the user is asked to evaluate the technical properties of the files by exploring the created techincal metadata.
 
-Prepararations
---------------
+Preparations
+------------
 
 Go to the test folder::
 
 	cd test_data/av_pkg/
 
-View files and strucure of package::
+View the files and the structure of the package::
 
 	ls
 	ls data/
@@ -59,7 +59,7 @@ matter)::
 
 	compile-structmap --workspace ./workspace 
 
-7 - Compile the METS document and copy content files to the workspace (feel free
+7 - Compile the METS document and copy content files into the workspace (feel free
 to change the organization name)::
 
 	compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
@@ -68,7 +68,7 @@ to change the organization name)::
 
 	sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
-9 - Compress the workspace contents to a SIP archive in tar format::
+9 - Compress the workspace contents into a SIP archive in tar format::
 
 	compress --tar_filename test-set3.tar ./workspace
 

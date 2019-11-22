@@ -1,18 +1,18 @@
 Exercise 1 (Structured textual data)
 ====================================
 
-The test package consists of text data structured in folders that are named with a human readable structural map in mind.
+The test package consists of text data. The data is structured in folders that are named with human readable folder names. The names are transferred to the structural metadata.
 This exercise focuses on running the basic commands to create a valid SIP package.
 The evaluation focuses on checking the output and comparing it to the original data as well as familiarizing the user with the metadata in the METS XML document.
 
 Preparations
---------------
+------------
 
 Go to the test folder::
 
     cd test_data/structured_pkg/
 
-View files and strucure of package::
+View the files and the structure of the package::
 
     ls
     ls -laR contents/
@@ -43,7 +43,7 @@ event_detail and event_outcome_detail texts, or any other text for that matter):
 
     compile-structmap --workspace ./workspace 
 
-5 - Compile the METS document and copy content files to the workspace (feel free
+5 - Compile the METS document and copy content files into the workspace (feel free
 to change the name of the organization)::
 
     compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
@@ -52,7 +52,7 @@ to change the name of the organization)::
 
     sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
-7 - Compress the workspace contents to a SIP archive in tar format::
+7 - Compress the workspace contents into a SIP archive in tar format::
 
     compress --tar_filename test-set1.tar ./workspace
 

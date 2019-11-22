@@ -5,14 +5,14 @@ This test case consists of a package containing an EAD3 finding aid file. The ME
 The exercise focuses on creating a structural map that translates the structure of the archival contents described in the EAD3 descriptive metadata, as well as creating the mandatory ADDML metadata for CSV files.
 In the evaluation the user is asked to evaluate the created structural metadata.
 
-Prepararations
---------------
+Preparations
+------------
 
 Go to the test folder::
 
 	cd test_data/ead3_pkg/
 
-View files and strucure of package::
+View the files and the structure of the package::
 
 	ls
 
@@ -49,7 +49,7 @@ event_detail and event_outcome_detail texts, or any other text for that matter):
 
     compile-structmap --workspace ./workspace --structmap_type 'EAD3-logical' --dmdsec_loc ead3-finding-aid.xml
 
-6 - Compile the METS document and copy content files to the workspace (feel free
+6 - Compile the METS document and copy content files into the workspace (feel free
 to change the organization name)::
 
 	compile-mets --workspace ./workspace ch 'my organization' 'e48a7051-2247-4d4d-ae90-44c8ee94daca' --copy_files --clean
@@ -58,7 +58,7 @@ to change the organization name)::
 
 	sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
-8 - Compress the workspace contents to a SIP archive in tar format::
+8 - Compress the workspace contents into a SIP archive in tar format::
 
 	compress --tar_filename test-set4.tar ./workspace
 
