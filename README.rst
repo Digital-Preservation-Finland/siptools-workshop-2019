@@ -1,8 +1,7 @@
 Pre-Ingest Tool Training Workshop
 =================================
 
-This repository contains test data sets and command examples for the pre-ingest
-tool training exercises held at CSC.
+This repository contains test data sets and command examples for the pre-ingest tool training exercises held at CSC.
 
 Installation of the pre-ingest tool
 -----------------------------------
@@ -22,5 +21,4 @@ Do the following commands in order::
 Exercise commands
 -----------------
 
-Open the exercise .rst files for specific command instructions for each of the
-six exercise cases with your browser by clicking the corresponding link.
+Open the exercises' .rst files within the ``exercises`` folder for specific command instructions for each of the six exercise cases with your browser by clicking the corresponding link.
