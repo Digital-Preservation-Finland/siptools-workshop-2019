@@ -49,7 +49,7 @@ to change the name of the organization)::
 
 6 - Digitally sign the METS document::
 
-    sign-mets --workspace ./workspace ../cert/rsa-keys.crt
+    sign-mets --workspace ./workspace ../../cert/rsa-keys.crt
 
 7 - Compress the workspace contents to a SIP archive in tar format::
 
