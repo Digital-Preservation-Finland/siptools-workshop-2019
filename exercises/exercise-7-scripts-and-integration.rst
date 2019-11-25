@@ -9,6 +9,10 @@ The example script
 
 The workshop training materials include a basic shell script example that can run the commands for creating a SIP from a folder containing digital objects. The script will run all mandatory commands, including creating technical metadata for image, audio and video files. The script does not include any error handling or advanced functions such as ordered structural metadata.
 
+Go to the scripts folder::
+
+    cd scripts/
+
 Make a workspace directory::
 
     mkdir workspace
