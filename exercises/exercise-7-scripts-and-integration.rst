@@ -17,7 +17,7 @@ Open the shell script for documentation on how the script is run.
 
 Run the shell script for one test case folder(e.g. the AV-package)::
 
-     ./pre_ingest_simple.sh ../test_data/av_pkg/data/ workspace/ ../test_data/av_pkg/metadata_dc.xml ../test_data/cert/rsa-keys.crt test.tar
+     ./pre_ingest_simple.sh ../test_data/av_pkg/data/ workspace/ ../test_data/av_pkg/metadata_dc.xml ../cert/rsa-keys.crt test.tar
 
 
 Evaluation
