@@ -26,7 +26,7 @@ Make a workspace directory::
 
 Create a folder structure using the mkdir command::
 
-    mkdir <folder>/>subfolder>
+    mkdir -p <folder>/<subfolder>
 
 Move files to their intended folder::
 
