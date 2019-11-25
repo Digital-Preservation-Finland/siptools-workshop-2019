@@ -68,7 +68,7 @@ compile-structmap
 compile-mets
     for compiling all previously created metadata files in a METS document.
 
-sign_mets
+sign-mets
     for digitally signing the submission information package.
 
 compress
