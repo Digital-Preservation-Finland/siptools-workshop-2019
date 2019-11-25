@@ -39,33 +39,33 @@ Remove unnecessary files::
 Scripts
 -------
 
-Run the following scripts and repeat them if necessary:
+Run the following scripts and repeat them if necessary. See the help section of the scripts for more information on the script parameters ( run ``<script> --help``):
 
-import_description
+import-description
     for adding a descriptive metadata section to a METS document.
 
-premis_event
+premis-event
     for creating digital provenance metadata.
 
-import_object
+import-object
     for adding technical metadata for digital objects to a METS document.
 
-create_mix
+create-mix
     for creating MIX metadata for image files.
 
-create_addml
+create-addml
     for creating ADDML metadata for csv files.
 
-create_audiomd
+create-audiomd
     for creating AudioMD metadata for audio streams.
 
-create_videomd
+create-videomd
     for creating VideoMD metadata for video streams.
 
-compile_structmap
+compile-structmap
     for creating the file section and structural map.
 
-compile_mets
+compile-mets
     for compiling all previously created metadata files in a METS document.
 
 sign_mets
