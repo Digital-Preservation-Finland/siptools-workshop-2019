@@ -32,32 +32,23 @@ FILES=$(find "$1" -type f -name "*")
 import-object . --workspace "$2" --base_path "$1"
 
 # Create video, audio, and image metadata
-videonr=0
-audionr=0
-imagenr=0
 for f in $FILES
 do
     filerel=${f/$1}
     filetype=$(file --mime-type "$f" | cut -d" " -f2 | cut -d/ -f1)
     echo $filerel
-    echo $filetype
     if [ "$filetype" == "video" ]
     then
+	# Only silent movies
 	create-videomd "$filerel" --base_path "$1" --workspace "$2"
-	videonr=$((videonr + 1))
     elif [ "$filetype" == "audio" ]
     then
 	create-audiomd "$filerel" --base_path "$1" --workspace "$2"
-	audionr=$((audionr + 1))
     elif [ "$filetype" == "image" ]
     then
 	create-mix "$filerel" --base_path "$1" --workspace "$2"
-	imagenr=$((imagenr + 1))
     fi
 done
-echo "Created VideoMD metadata for $videonr files"
-echo "Created AudioMD metadata for $audionr files"
-echo "Created MIX metadata for $imagenr files"
 
 # Create an event
 now=$(date -d "now" "+%Y-%m-%dT%H:%M:%S")
