@@ -6,7 +6,7 @@
 # and creates a SIP from those.
 #
 # Does not consider any error situations.
-# Does not work for CSV files nor non-implemented file formats.
+# Does not work with some file formats.
 # Make sure that workspace exists and is empty before running.
 # Use at your own risk. Not intended for production use as such.
 #
@@ -25,18 +25,22 @@ PROFILE="ch"
 ORGANIZATION="My Organization"
 CONTRACT="47265f3e-f423-4926-9f27-7bab08508732"
 
-
+# Find files from directory and sub-directories
 FILES=$(find "$1" -type f -name "*")
 
-# Import the whole directory
-import-object . --workspace "$2" --base_path "$1"
-
-# Create video, audio, and image metadata
+# Import files and create technical metadata
 for f in $FILES
 do
     filerel=${f/$1}
+
+    # file command does not work for all file formats.
     filetype=$(file --mime-type "$f" | cut -d" " -f2 | cut -d/ -f1)
     echo $filerel
+    echo $filetype
+
+    # Import file
+    import-object "$filerel" --workspace "$2" --base_path "$1"
+
     if [ "$filetype" == "video" ]
     then
 	# Only silent movies
@@ -50,7 +54,7 @@ do
     fi
 done
 
-# Create an event
+# Create a creation event
 now=$(date -d "now" "+%Y-%m-%dT%H:%M:%S")
 premis-event creation "$now" --workspace "$2" --base_path "$1" \
     --event_detail "$EVENT_DETAIL" --event_outcome "success" \
