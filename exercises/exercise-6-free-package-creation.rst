@@ -103,8 +103,8 @@ called output1.txt)::
 Grep the output1.txt file for successful or failed patterns (it isn't really
 human readable)::
 
-    grep failed output1.txt
-    grep patterns output1.txt
+    grep -C 3 failed output1.txt
+    grep -C 3 patterns output1.txt
 
 Validate the checksums recorded in the METS document against the actual files::
 
