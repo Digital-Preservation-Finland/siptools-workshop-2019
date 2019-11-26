@@ -6,7 +6,16 @@ This repository contains test data sets and exercises with command examples for 
 Installation of the pre-ingest tool
 -----------------------------------
 
-Do the following commands in order::
+Start by creating a folder for all workshop data::
+
+    mkdir training-workshop
+    cd training-workshop/
+
+Then clone this repository to the folder::
+
+    git clone https://github.com/Digital-Preservation-Finland/siptools-workshop-2019
+
+Then, do the following commands in order::
 
     git clone https://github.com/Digital-Preservation-Finland/dpres-siptools
     cd dpres-siptools
@@ -17,6 +26,7 @@ Do the following commands in order::
     pip install .
     pip install git+https://github.com/Digital-Preservation-Finland/dpres-ipt
     cd ..
+    cd siptools-workshop-2019/
 
 Exercises
 ---------
