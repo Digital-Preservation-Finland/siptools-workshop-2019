@@ -83,7 +83,7 @@ View the created METS document::
 |
 | The descriptive metadata from the file ``metadata_dc.xml`` is just below the mets header, in the descriptive metadata section (``dmdSec``).
 |
-| Look at one of the technical metadata blocks described as ``premis:object`` metadata`. What does the technical metadata tell us about the file format of the file in question?
+| Look at one of the technical metadata blocks described as ``premis:object`` metadata. What does the technical metadata tell us about the file format of the file in question?
 |
 | The METS structural map (``structMap``) is at the end of the document, look at the described structure and see how the directory structure and names are translated to the structural map.
 |
