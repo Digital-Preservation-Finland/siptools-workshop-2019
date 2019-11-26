@@ -1,4 +1,4 @@
-Exercise 5 (Validate the data)
+Exercise 8 (Validate the data)
 ==============================
 
 This test case consists of both valid and invalid contents. The goal is to create either an valid or invalid pckage and validate the data using the validation tools provided by the DPS. In this exercise we also use the wellformedness validation built into the pre-ingest tool.
@@ -70,6 +70,8 @@ human readable)::
     grep -C 3 failed output1.txt
     grep -C 3 patterns output1.txt
 
+The schematron check should report failed checks. Can you see what is wrong with the metadata?
+
 Validate the checksums recorded in the METS document against the actual files::
 
     check-sip-file-checksums workspace/
@@ -79,10 +81,11 @@ actual files using different validators installed with the file-scraper tool::
 
     check-sip-digital-objects workspace/ test test > output2.txt
 
-Grep the output2.txt file for successful or failed events::
+Grep the output2.txt file for failed events::
 
     grep failure -B 5 -A 15 output2.txt
-    grep success output2.txt
+
+The invalid file should fail the validation check.
 
 Finally, clean up the workspace::
 
