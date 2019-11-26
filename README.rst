@@ -25,6 +25,7 @@ Then, do the following commands in order::
     pip install -r requirements_github.txt
     pip install .
     pip install git+https://github.com/Digital-Preservation-Finland/dpres-ipt
+    export PYTHONIOENCODING=utf8
     cd ..
     cd siptools-workshop-2019/
 
